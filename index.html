@@ -32,11 +32,11 @@
         font-size: 2.5rem;
         margin: 0;
         text-transform: uppercase;
-        text-shadow: 
-            0 0 7px #fff, 
-            0 0 10px #fff, 
-            0 0 21px #bc13fe, 
-            0 0 42px #bc13fe, 
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #bc13fe,
+            0 0 42px #bc13fe,
             0 0 82px #bc13fe;
     }
 
@@ -124,52 +124,100 @@
             flex-direction: column;
             gap: 20px;
         }
-        h1 { font-size: 1.8rem; }
+        h1 {
+            font-size: 1.8rem;
+        }
     }
 </style>
 </head>
 <body>
 
-    <header>
-        <h1>Bitácora de Tecnología</h1>
-    </header>
+<header>
+    <h1>Bitácora de Tecnología</h1>
+</header>
 
-    <main>
-        <div class="semana">
-            <h2>Semana 1: Mi Primer Diseño</h2>
-            <p>En esta sesión aprendimos a estructurar una página web y a aplicar estilos personalizados. ¡El efecto neón es mi favorito!</p>
-            <button class="btn-creativo" onclick="window.open('https://colegiocapouilliez.sharepoint.com/sites/11B-TECNOLOGAIIU/_layouts/15/embed.aspx?uniqueId=b36e4758-3506-4ff9-9dfb-5ced420fa92a&embed={%22nb%22:true,%22o%22:%22https://assignments.edu.cloud.microsoft%22,%22itf%22:%22rc%22,%22af%22:false}', '_blank')">
-                Ver más detalles
-            </button>
+<main>
+
+    <div class="semana">
+        <h2>Semana 1: Mi Primer Diseño</h2>
+        <p>
+            En esta sesión aprendimos a estructurar una página web y a aplicar
+            estilos personalizados. ¡El efecto neón es mi favorito!
+        </p>
+
+        <button class="btn-creativo"
+        onclick="window.open('https://colegiocapouilliez.sharepoint.com/sites/11B-TECNOLOGAIIU/_layouts/15/embed.aspx?uniqueId=b36e4758-3506-4ff9-9dfb-5ced420fa92a&embed={%22nb%22:true,%22o%22:%22https://assignments.edu.cloud.microsoft%22,%22itf%22:%22rc%22,%22af%22:false}', '_blank')">
+            Ver más detalles
+        </button>
+    </div>
+
+    <div class="semana">
+        <h2>Semana 2: Interactividad</h2>
+        <p>
+            Hoy agregamos efectos de movimiento a los botones y aprendimos cómo
+            el CSS puede hacer que una página se sienta viva.
+        </p>
+
+        <button class="btn-creativo">
+            Descargar Tarea
+        </button>
+    </div>
+
+    <div class="semana">
+        <h2>Semana 3: Robótica y Tinkercad</h2>
+
+        <p>
+            En esta semana trabajamos con Arduino en la plataforma Tinkercad.
+            Programamos un circuito con LEDs para realizar una secuencia de
+            parpadeo y cambio de colores mediante código C++.
+        </p>
+
+        <div class="video-container">
+            <video controls>
+                <source src="recursos/ing/Grabación 2026-05-05 123514.mp4" type="video/mp4">
+                Tu navegador no soporta videos en HTML5.
+            </video>
         </div>
 
-        <div class="semana">
-            <h2>Semana 2: Interactividad</h2>
-            <p>Hoy agregamos efectos de movimiento a los botones y aprendimos cómo el CSS puede hacer que una página se sienta viva.</p>
-            <button class="btn-creativo">Descargar Tarea</button>
+        <button class="btn-creativo"
+        onclick="alert('¡Simulación completada con éxito!')">
+            Ver Código C++
+        </button>
+    </div>
+
+    <div class="semana">
+        <h2>Semana 4: Proyecto Final</h2>
+
+        <p>
+            En esta semana realizamos nuestro proyecto final, aplicando los
+            conocimientos aprendidos durante el curso. Integramos diseño,
+            programación y elementos multimedia para mejorar la experiencia
+            del usuario.
+        </p>
+
+        <div class="video-container">
+            <video controls>
+                <source src="recursos/semana4/video_semana4.mp4" type="video/mp4">
+                Tu navegador no soporta videos en HTML5.
+            </video>
         </div>
 
-        <div class="semana">
-            <h2>Semana 3: Robótica y Tinkercad</h2>
-            <p>En esta semana trabajamos con Arduino en la plataforma Tinkercad. Programamos un circuito con LEDs para realizar una secuencia de parpadeo y cambio de colores mediante código C++.</p>
-            
-            <div class="video-container">
-                    <source src="recursos/ing/Grabación 2026-05-05 123514.mp4" type="video/mp4">
-                    Tu navegador no soporta videos en HTML5.
-                </video>
-            </div>
-            
-            <button class="btn-creativo" onclick="alert('¡Simulación completada con éxito!')">Ver Código C++</button>
-        </div>
-    </main>
+        <button class="btn-creativo"
+        onclick="alert('¡Proyecto final presentado con éxito!')">
+            Ver Proyecto
+        </button>
+    </div>
 
-    <footer>
-        <span>2026 @Rebekun | Rebeca Illescas</span>
-        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" 
-             alt="Logo Colegio" 
-             class="logo-colegio" 
-             width="150">
-    </footer>
+</main>
+
+<footer>
+    <span>2026 @Rebekun | Rebeca Illescas</span>
+
+    <img src="https://www.capouilliez.edu.gt/assets/img/logo.png"
+         alt="Logo Colegio"
+         class="logo-colegio"
+         width="150">
+</footer>
 
 </body>
-</html>
+</html></html>
