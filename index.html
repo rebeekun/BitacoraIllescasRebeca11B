@@ -7,129 +7,163 @@
 
     <link rel="icon" type="image/png" href="logo.png">
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background-color: #f0f0f5;
-        color: #333;
-    }
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+        }
 
-    body {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header {
-        padding: 50px 20px;
-        background-color: #121212;
-    }
-
-    h1 {
-        color: white;
-        font-size: 2.5rem;
-        margin: 0;
-        text-transform: uppercase;
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #bc13fe,
-            0 0 42px #bc13fe,
-            0 0 82px #bc13fe;
-    }
-
-    main {
-        flex: 1;
-        padding: 40px 20px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .semana {
-        background-color: white;
-        border-radius: 20px;
-        padding: 30px;
-        margin-bottom: 30px;
-        text-align: left;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        border-left: 8px solid #bc13fe;
-        transition: transform 0.3s ease;
-    }
-
-    .semana:hover {
-        transform: scale(1.02);
-    }
-
-    .semana h2 {
-        color: #bc13fe;
-        margin-top: 0;
-    }
-
-    .video-container {
-        margin-top: 20px;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    video {
-        width: 100%;
-        display: block;
-    }
-
-    .btn-creativo {
-        background-color: #bc13fe;
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        border-radius: 50px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 10px rgba(188, 19, 254, 0.3);
-        margin-top: 15px;
-    }
-
-    .btn-creativo:hover {
-        background-color: #9d00e0;
-        box-shadow: 0 6px 15px rgba(188, 19, 254, 0.4);
-    }
-
-    .btn-creativo:active {
-        transform: scale(0.9);
-    }
-
-    footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 50px;
-        background-color: #2c2c2c;
-        color: white;
-        border-top: 2px solid #bc13fe;
-    }
-
-    .logo-colegio {
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .logo-colegio:hover {
-        transform: scale(1.25);
-    }
-
-    @media(max-width:600px){
-        footer {
+        body {
+            display: flex;
             flex-direction: column;
-            gap: 20px;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px 20px;
+            background-color: #121212;
         }
 
         h1 {
-            font-size: 1.8rem;
+            color: white;
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #bc13fe,
+                0 0 42px #bc13fe,
+                0 0 82px #bc13fe;
         }
-    }
-</style>
+
+        /* --- CONTENEDOR PRINCIPAL EN GRID --- */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            align-items: stretch; /* Hace que todas las tarjetas de una fila tengan la misma altura */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* --- TARJETAS UNIFORMES --- */
+        .semana {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 8px solid #bc13fe;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Alinea los botones al final */
+            box-sizing: border-box;
+        }
+
+        .semana:hover {
+            transform: translateY(-5px);
+        }
+
+        .semana h2 {
+            color: #bc13fe;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .semana p {
+            flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* --- CONTENEDOR Y VIDEOS UNIFORMES --- */
+        .video-container {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background-color: #000;
+            height: 200px; /* Altura fija para que todos los videos midan exactamente lo mismo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta suavemente el video para llenar el recuadro sin deformarse */
+            display: block;
+        }
+
+        .btn-creativo {
+            background-color: #bc13fe;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(188, 19, 254, 0.3);
+            margin-top: 10px;
+            align-self: flex-start;
+        }
+
+        .btn-creativo:hover {
+            background-color: #9d00e0;
+            box-shadow: 0 6px 15px rgba(188, 19, 254, 0.4);
+        }
+
+        .btn-creativo:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #2c2c2c;
+            color: white;
+            border-top: 2px solid #bc13fe;
+            margin-top: 40px;
+        }
+
+        .logo-colegio {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo-colegio:hover {
+            transform: scale(1.15);
+        }
+
+        @media(max-width: 600px){
+            footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -139,72 +173,127 @@
 
 <main>
 
+    <!-- Semana 1 -->
     <div class="semana">
-        <h2>Semana 1: Mi Primer Diseño</h2>
-        <p>
-            En esta sesión aprendimos a estructurar una página web y a aplicar
-            estilos personalizados. ¡El efecto neón es mi favorito!
-        </p>
-
+        <div>
+            <h2>Semana 1: Mi Primer Diseño</h2>
+            <p>
+                En esta sesión aprendimos a estructurar una página web y a aplicar
+                estilos personalizados. ¡El efecto neón es mi favorito!
+            </p>
+        </div>
         <button class="btn-creativo"
         onclick="window.open('https://colegiocapouilliez.sharepoint.com/sites/11B-TECNOLOGAIIU/_layouts/15/embed.aspx?uniqueId=b36e4758-3506-4ff9-9dfb-5ced420fa92a&embed={%22nb%22:true,%22o%22:%22https://assignments.edu.cloud.microsoft%22,%22itf%22:%22rc%22,%22af%22:false}', '_blank')">
             Ver más detalles
         </button>
     </div>
 
+    <!-- Semana 2 -->
     <div class="semana">
-        <h2>Semana 2: Interactividad</h2>
-        <p>
-            Hoy agregamos efectos de movimiento a los botones y aprendimos cómo
-            el CSS puede hacer que una página se sienta viva.
-        </p>
-
+        <div>
+            <h2>Semana 2: Interactividad</h2>
+            <p>
+                Hoy agregamos efectos de movimiento a los botones y aprendimos cómo
+                el CSS puede hacer que una página se sienta viva.
+            </p>
+        </div>
         <button class="btn-creativo">
             Descargar Tarea
         </button>
     </div>
 
+    <!-- Semana 3 -->
     <div class="semana">
-        <h2>Semana 3: Robótica y Tinkercad</h2>
-
-        <p>
-            En esta semana trabajamos con Arduino en la plataforma Tinkercad.
-            Programamos un circuito con LEDs para realizar una secuencia de
-            parpadeo y cambio de colores mediante código C++.
-        </p>
-
-        <div class="video-container">
-            <video controls>
-                <source src="recursos/ing/Grabación 2026-05-05 123514.mp4" type="video/mp4">
-                Tu navegador no soporta videos HTML5.
-            </video>
+        <div>
+            <h2>Semana 3: Robótica y Tinkercad</h2>
+            <p>
+                En esta semana trabajamos con Arduino en la plataforma Tinkercad.
+                Programamos un circuito con LEDs para realizar una secuencia de
+                parpadeo y cambio de colores mediante código C++.
+            </p>
+            <div class="video-container">
+                <video controls>
+                    <source src="recursos/ing/Grabación 2026-05-05 123514.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
         </div>
-
-        <button class="btn-creativo"
-        onclick="alert('¡Simulación completada con éxito!')">
+        <button class="btn-creativo" onclick="alert('¡Simulación completada con éxito!')">
             Ver Código C++
         </button>
     </div>
 
+    <!-- Semana 4 -->
     <div class="semana">
-        <h2>Semana 4: Proyecto Final</h2>
-
-        <p>
-            Durante esta semana presentamos el proyecto final, aplicando los
-            conocimientos aprendidos en diseño, programación e interactividad.
-        </p>
-
-        <div class="video-container">
-            <video controls>
-                <source src="semana4.mp4" type="video/mp4">
-                Tu navegador no soporta videos HTML5.
-            </video>
+        <div>
+            <h2>Semana 4: Proyecto Final</h2>
+            <p>
+                Durante esta semana presentamos el proyecto final, aplicando los
+                conocimientos aprendidos en diseño, programación e interactividad.
+            </p>
+            <div class="video-container">
+                <video controls>
+                    <source src="semana4.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
         </div>
-
-        <button class="btn-creativo"
-        onclick="alert('¡Proyecto final presentado con éxito!')">
+        <button class="btn-creativo" onclick="alert('¡Proyecto final presentado con éxito!')">
             Ver Proyecto
         </button>
+    </div>
+
+    <!-- Semana 5 -->
+    <div class="semana">
+        <div>
+            <h2>Semana 5: Circuito en Serie</h2>
+            <p>
+                En esta semana construimos un circuito en serie utilizando Arduino y
+                Tinkercad. Aprendimos cómo circula la corriente eléctrica a través de
+                todos los componentes.
+            </p>
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline>
+                    <source src="videos/semana5.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Semana 6 -->
+    <div class="semana">
+        <div>
+            <h2>Semana 6: Circuito en Paralelo</h2>
+            <p>
+                En esta semana trabajamos con un circuito en paralelo utilizando
+                Arduino y Tinkercad. Aprendimos cómo cada LED funciona de manera
+                independiente.
+            </p>
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline>
+                    <source src="videos/semana6.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Semana 7 -->
+    <div class="semana">
+        <div>
+            <h2>Semana 7: Programación Arduino</h2>
+            <p>
+                En esta semana realizamos la programación de un circuito utilizando
+                Arduino en Tinkercad para controlar el funcionamiento de los componentes.
+            </p>
+            <div class="video-container">
+                <video controls autoplay muted loop playsinline>
+                    <source src="videos/semana7.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+        </div>
     </div>
 
 </main>
@@ -219,59 +308,4 @@
 </footer>
 
 </body>
-</html>
-<div class="semana">
-    <h2>Semana 5: Circuito en Serie</h2>
-
-    <p>
-        En esta semana construimos un circuito en serie utilizando Arduino y
-        Tinkercad. Aprendimos cómo circula la corriente eléctrica a través de
-        todos los componentes y comprobamos el funcionamiento de los LEDs,
-        reforzando los conceptos básicos de electrónica y programación.
-    </p>
-
-    <div class="video-container">
-        <video controls autoplay muted loop playsinline>
-            <source src="videos/semana5.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-    </div>
-
-</div>
-<div class="semana">
-    <h2>Semana 6: Circuito en Paralelo</h2>
-
-    <p>
-        En esta semana trabajamos con un circuito en paralelo utilizando
-        Arduino y Tinkercad. Aprendimos cómo cada LED funciona de manera
-        independiente y analizamos las diferencias entre un circuito en serie
-        y uno en paralelo, reforzando nuestros conocimientos de electrónica
-        y programación.
-    </p>
-
-    <div class="video-container">
-        <video controls autoplay muted loop playsinline>
-            <source src="videos/semana6.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-    </div>
-
-</div>
-<div class="semana">
-    <h2>Semana 7: Programación de Circuitos con Arduino</h2>
-
-    <p>
-        En esta semana realizamos la programación de un circuito utilizando
-        Arduino en Tinkercad. Aplicamos instrucciones para controlar el
-        funcionamiento de los componentes electrónicos, fortaleciendo nuestros
-        conocimientos sobre programación, automatización y electrónica básica.
-    </p>
-
-    <div class="video-container">
-        <video controls autoplay muted loop playsinline>
-            <source src="videos/semana7.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-    </div>
-
-</div>
+</html>iv>
